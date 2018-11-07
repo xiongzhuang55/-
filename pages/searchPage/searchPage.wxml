@@ -1,0 +1,48 @@
+<!--pages/searchPage/searchPage.wxml-->
+<view>
+  <!-- 搜索 -->
+  <view class="search" bindtap='search'>
+    <view class="searchInput">
+      <icon type="search" size="20"/>
+      <input type='text' value="{{searchTxt}}" placeholder='搜索商品' bindinput='inputSearch' bindfocus='clearBtnShow' bindblur='clearBtnHide'></input>
+      <view wx:if="{{clearBtn}}" class="clearInput" catchtap='clearInput'></view>
+    </view>
+    <view catchtap='searchBtn'>搜索</view>
+  </view>
+  <view class="blurWrapper" wx:if="{{blurList.length}}">
+    <view wx:for="{{blurList}}" wx:key="index" data-name="{{item.name}}" catchtap='blurResult'>{{item.name}}</view>
+  </view>
+  <view class="resultWrapper" wx:if="{{resultList.length}}">
+    <view wx:for="{{resultList}}" wx:key="index">
+    <image src="{{item.src}}" mode="widthFix"></image>
+    <view>
+      <view class="title">{{item.name}}</view>
+      <view>
+        <text class="disPrice">￥{{item.disPrice}}</text>
+        <view class="price" wx:if="{{item.price}}">
+          ￥{{item.price}}
+          <text></text>
+        </view>
+      </view>
+    </view>
+    </view>
+  </view>
+  <view wx:if="{{noResult}}" style='text-align:center;'>
+    <image src='../../images/ico_noResult.png' style="width:150rpx;" mode='widthFix'></image>
+    <view>暂无商品</view>
+  </view>
+  <!-- 常用搜索 -->
+  <view class="mostSearch">
+    <view wx:for="{{Mostlist}}" wx:key="index" data-name="{{item.name}}" catchtap='blurResult'>
+      {{item.name}}
+    </view>
+  </view>
+  <!-- 历史搜索 -->
+  <view class="storageWrapper" wx:if="{{storageList.length}}">
+    <view>搜索历史</view>
+    <view style='background-color:#fff;'>
+      <view class="storageList" wx:for="{{storageList}}" wx:key="index" data-name="{{item}}" catchtap='blurResult'>{{item}}</view>
+    </view>
+    <view bindtap='clearStorage'>清除搜索记录</view>
+  </view>
+</view>

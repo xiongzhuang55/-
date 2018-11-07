@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="accredit" wx:if="{{accredit}}" bindtap='toAccredit'>
+  <icon type='warn'  size='20' color='#10AEFF'></icon>
+  <view>请授权头像等信息，以便为您提供更好的服务></view>
+</view>
+<view class="header">
+  <!-- 搜索 -->
+  <view class="search" bindtap='search'>
+    <icon type="search" size="20"/>
+    <view>搜索商品</view>
+  </view>
+</view>
+<!-- 轮播图 -->
+<swiper indicator-dots="true"
+   interval="3000" duration="500" autoplay="false" indicator-active-color="#fff" circular="true">
+  <block wx:for="{{list}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.img}}" mode='scaleToFill'/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 十宫格 -->
+<view class="ten-tab">
+  <view wx:for="{{list}}" wx:key="index">
+    <image src='{{item.img}}' mode='scaleToFill'></image>
+    <view>{{item.name}}</view>
+  </view>
+</view>
+<!-- 商品介绍 -->
+<view class="contentTitle">超值推荐</view>
+<view class="content">
+  <view class="contentShop" wx:for="{{list}}" wx:key="index" bindtap='shopDetail' data-title="{{item.title}}">
+    <image src='{{item.img}}' mode='scaleToFill'></image>
+    <view class="shopText">
+      <view>{{item.title}}</view>
+      <view>{{item.city}}</view>
+      <view>
+        <text>{{item.price}}元起</text>
+        <text class="price">{{item.original_price}}元起</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+

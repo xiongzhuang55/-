@@ -1,0 +1,13 @@
+/* pages/shopCart/shopCart.wxss */
+/* 授权 */
+.accredit{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #F7F6F2;
+  color: #999;
+  font-size: 14px;
+}
+.accredit>view{
+  margin-left: 10rpx;
+}

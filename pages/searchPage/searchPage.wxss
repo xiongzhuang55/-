@@ -1,0 +1,130 @@
+/* pages/searchPage/searchPage.wxss */
+page { 
+  background-color: #FAFAFA; 
+}
+/* 搜索框 */
+.search{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  margin: 15rpx 20rpx;
+  justify-content: space-around;
+}
+.searchInput{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  margin-right: 30rpx;
+  background-color: #fff;
+  border-radius: 50rpx;
+}
+.searchInput input{
+  flex: 1;
+  padding-left: 20rpx;
+}
+.clearInput{
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transform: rotate(45deg)
+}
+.clearInput::before{
+  width: 20px;
+  height: 2px;
+  content: "";
+  display: inline-block;
+  background-color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.clearInput::after{
+  width: 2px;
+  height: 20px;
+  content: "";
+  display: inline-block;
+  background-color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+/* 模糊搜索列表 */
+.blurWrapper,.resultWrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130rpx;
+  bottom: 0;
+  background-color: #fff;
+}
+.blurWrapper>view{
+  margin-left: 30rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+/* 搜索结果 */
+.resultWrapper>view{
+  display: flex;
+  align-items: center;
+  padding: 15rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.resultWrapper>view image{
+  width: 250rpx;
+  margin-right: 30rpx;
+}
+.resultWrapper>view .title{
+  font-size: 18px;
+}
+.resultWrapper>view .disPrice{
+  font-size: 18px;
+  color: red;
+}
+.resultWrapper>view .price{
+  position: relative;
+  display: inline-block;
+  margin-left: 10rpx;
+  font-size: 14px;
+}
+.resultWrapper>view .price text{
+  position: absolute;
+  top:50%;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  border-bottom: 1rpx solid #000;
+}
+/* 最多搜索 */
+.mostSearch{
+  margin: 30rpx 20rpx;
+}
+.mostSearch>view{
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 50rpx;
+  padding: 10rpx 15rpx;
+  margin: 0 20rpx 10rpx 0;
+}
+/* 历史搜索 */
+.storageWrapper>view:first-child{
+  font-size: 14px;
+  padding: 10rpx 0;
+  color: #ddd;
+  padding-left: 25rpx;
+}
+.storageWrapper .storageList{
+  background-color: #fff;
+  padding: 15rpx 0;
+  margin-left: 25rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.storageWrapper>view:last-child{
+  text-align: center;
+  color: #89efef;
+  padding: 15rpx 0;
+  background-color: #fff;
+}

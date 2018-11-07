@@ -1,0 +1,6 @@
+<!--pages/shopCart/shopCart.wxml-->
+<view class="accredit" wx:if="{{accredit}}" bindtap='toAccredit'>
+  <icon type='warn'  size='20' color='#10AEFF'></icon>
+  <view>请授权头像等信息，以便为您提供更好的服务></view>
+</view>
+<view wx:else>已授权的购物车</view>
